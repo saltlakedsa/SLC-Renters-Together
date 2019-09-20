@@ -1,0 +1,58 @@
+.main {
+    .parallaxChildren {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+        justify-content: center;
+        .parallaxText {
+            text-align: center;
+            padding: 6px;
+            color: white;
+            background-color: black;
+            font-weight: normal;
+        }
+    }
+
+    .section-row {
+        margin-bottom: $spacing-xxxl;
+    }
+
+    h2 {
+        font-weight: 600;
+    }
+
+    .housing-email {
+        color: $dsa-red;
+    }
+
+    // Small devices (landscape phones, less than 768px)
+    @media (max-width: 767.98px) { 
+        h2 {
+            font-size: 24px;
+            text-align: left;
+        }
+        h4 {
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .parallaxChildren {
+            .parallaxText{
+                font-size: 32px;
+            }
+        }
+
+        .section-row {
+            margin-bottom: $spacing-lg;
+        }
+    }
+
+}
