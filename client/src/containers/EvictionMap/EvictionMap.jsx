@@ -3,7 +3,7 @@ import React from 'react';
 class EvictionMap extends React.Component {
   state = {
     width: `${window.innerWidth}px`,
-    height: `${window.innerHeight - 30}px`,
+    height: `${window.innerHeight}px`,
   };
 
   componentDidMount() {
@@ -20,7 +20,7 @@ class EvictionMap extends React.Component {
 
   updateWindowDimensions() {
     const w = `${window.innerWidth}px`;
-    const h = `${window.innerHeight - 30}px`;
+    const h = `${window.innerHeight}px`;
     this.setState({ width: w, height: h });
   }
 
@@ -30,12 +30,13 @@ class EvictionMap extends React.Component {
       <>
         <div
           className="eviction-map"
-          style={{ top: '20px', position: 'fixed', zIndex: -1 }}
+          style={{ top: '0', position: 'fixed', zIndex: -1 }}
         >
           <embed
             src="https://esta.bli.sh/viewmap/5d2fa039948dd24c23ea753d"
             width={width}
             height={height}
+            style={{pointerEvents:'all'}}
           />
         </div>
       </>
