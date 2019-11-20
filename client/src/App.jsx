@@ -4,6 +4,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from "./containers/Main";
 import KnowYourRights from "./containers/KnowYourRights";
+import EvictionMap from "./containers/EvictionMap";
 import "./scss/App.scss";
 import TellUsMore from "./containers/TellUsMore";
 import apartmentSVG from "./assets/images/housing-apartment.svg";
@@ -40,9 +41,9 @@ function App() {
               <LinkContainer to="/tell-us-more">
                 <Nav.Link>Tell us more</Nav.Link>
               </LinkContainer>
-              {/* <LinkContainer to="/eviction-map">
+              <LinkContainer to="/eviction-map">
                 <Nav.Link>Eviction Map</Nav.Link>
-              </LinkContainer> */}
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -50,7 +51,7 @@ function App() {
         <Route exact path="/" component={Main} />
         <Route path="/know-your-rights" exact component={KnowYourRights} />
         <Route path="/tell-us-more" exact component={TellUsMore} />
-        {/* <Route path="/eviction-map" exact component={EvictionMap} /> */}
+        <Route path="/eviction-map" exact component={EvictionMap} />
       </Router>
       {/* <footer id="sticky-footer" class="absolute-bottom py-4 bg-secondary text-white-50">
         <div class="container text-center">

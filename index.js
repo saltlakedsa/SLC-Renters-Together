@@ -29,7 +29,7 @@ app.use((request, response, next) => {
 });
 
 const htmlpath = path.join(__dirname, './client/build/index.html');
-app.get('/', (req, res) => res.sendFile(htmlpath));
+app.get('*', (req, res) => res.sendFile(htmlpath));
 
 app.post('/', upload.array(), parseBody
 // , csrfProtection
@@ -66,14 +66,14 @@ app.post('/newsletter', upload.array(), parseBody, async(req, res, next) => {
 });
 
 app.use(function (req, res, next) {
-	if (req.url) console.log(req.url)
-	var err = new Error('Not Found');
-	err.status = 404;
-	return next(err);
+  if (req.url) console.log(req.url)
+  var err = new Error('Not Found');
+  err.status = 404;
+  return next(err);
 })
 .use(function (err, req, res, next) {
-	console.log(err)
-	return res.sendFile(htmlpath);
+  console.log(err)
+  return res.sendFile(htmlpath);
 });
 
 if (mongoose.connection.readyState === 0) {
@@ -95,7 +95,7 @@ if (mongoose.connection.readyState === 0) {
 
 app
 .listen(process.env.PORT, function () {
-	console.log('Using Node Version: ' + process.version);
-	(process.version == 'v10.15.3') ? console.log('..up-to-date') : console.log('expecting v10.15.3');
-	console.log('Web server listening on port: ' + process.env.PORT);
+  console.log('Using Node Version: ' + process.version);
+  (process.version == 'v10.15.3') ? console.log('..up-to-date') : console.log('expecting v10.15.3');
+  console.log('Web server listening on port: ' + process.env.PORT);
 });
